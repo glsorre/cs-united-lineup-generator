@@ -1,0 +1,498 @@
+{
+  "id": "4031",
+  "players": [
+    {
+      "id": "167685",
+      "name": "Alessandro Micai",
+      "surname": "Micai",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Jul 24, 1993",
+      "age": "31",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,86m",
+      "foot": "right",
+      "signedFrom": "US Salernitana 1919",
+      "contract": "€500k",
+      "marketValue": "€500k"
+    },
+    {
+      "id": "459102",
+      "name": "Thomas Vettorel",
+      "surname": "Vettorel",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Sep 17, 2000",
+      "age": "23",
+      "nationality": [
+        "Italy",
+        "Switzerland"
+      ],
+      "height": "1,90m",
+      "foot": "right",
+      "joined": "Joined from AS Gubbio 1910; date: Jul 25, 2024; fee: ?",
+      "signedFrom": "AS Gubbio 1910",
+      "contract": "€200k",
+      "marketValue": "€200k"
+    },
+    {
+      "id": "715616",
+      "name": "Gabriele Baldi",
+      "surname": "Baldi",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Aug 24, 2004",
+      "age": "19",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,96m",
+      "foot": "right",
+      "joined": "Joined from Giugliano Calcio 1928; date: Jul 13, 2024; fee: ?",
+      "signedFrom": "Giugliano Calcio 1928",
+      "contract": "€150k",
+      "marketValue": "€150k",
+      "status": "unknown injury - Return unknown"
+    },
+    {
+      "id": "565241",
+      "name": "Alessandro Lai",
+      "surname": "Lai",
+      "position": "Goalkeeper",
+      "dateOfBirth": "Oct 23, 2000",
+      "age": "23",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,86m",
+      "foot": "right",
+      "signedFrom": "FC Lamezia Terme",
+      "contract": "€50k",
+      "marketValue": "€50k"
+    },
+    {
+      "id": "487829",
+      "name": "Christian Dalle Mura",
+      "surname": "Dalle Mura",
+      "position": "Centre-Back",
+      "dateOfBirth": "Feb 2, 2002",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,85m",
+      "foot": "left",
+      "joined": "Joined from ACF Fiorentina; date: Jul 12, 2024; fee: ?",
+      "signedFrom": "ACF Fiorentina",
+      "contract": "€850k",
+      "marketValue": "€850k"
+    },
+    {
+      "id": "441611",
+      "name": "Michael Venturi",
+      "surname": "Venturi",
+      "position": "Centre-Back",
+      "dateOfBirth": "Jan 23, 1999",
+      "age": "25",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,93m",
+      "foot": "right",
+      "signedFrom": ": Ablöse free transfer",
+      "contract": "€700k",
+      "marketValue": "€700k"
+    },
+    {
+      "id": "62716",
+      "name": "Michele Camporese",
+      "surname": "Camporese",
+      "position": "Centre-Back",
+      "dateOfBirth": "May 19, 1992",
+      "age": "32",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,86m",
+      "foot": "right",
+      "joined": "Joined from Feralpisalò; date: Jul 1, 2024; fee: ?",
+      "signedFrom": "Feralpisalò",
+      "contract": "€400k",
+      "marketValue": "€400k"
+    },
+    {
+      "id": "394920",
+      "name": "Filippo Sgarbi",
+      "surname": "Sgarbi",
+      "position": "Centre-Back",
+      "dateOfBirth": "Dec 29, 1997",
+      "age": "26",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,91m",
+      "foot": "right",
+      "joined": "Returned after loan spell with Ternana Calcio; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "AC Perugia Calcio",
+      "contract": "€350k",
+      "marketValue": "€350k"
+    },
+    {
+      "id": "397115",
+      "name": "Alessandro Caporale",
+      "surname": "Caporale",
+      "position": "Centre-Back",
+      "dateOfBirth": "Oct 28, 1995",
+      "age": "28",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,90m",
+      "foot": "left",
+      "joined": "Joined from Calcio Lecco 1912; date: Jul 16, 2024; fee: ?",
+      "signedFrom": "Calcio Lecco 1912",
+      "contract": "€250k",
+      "marketValue": "€250k"
+    },
+    {
+      "id": "415520",
+      "name": "Andrea Hristov",
+      "surname": "Hristov",
+      "position": "Centre-Back",
+      "dateOfBirth": "Mar 1, 1999",
+      "age": "25",
+      "nationality": [
+        "Bulgaria"
+      ],
+      "height": "1,92m",
+      "foot": "both",
+      "joined": "Returned after loan spell with Potenza Calcio; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "Slavia Sofia",
+      "contract": "€175k",
+      "marketValue": "€175k"
+    },
+    {
+      "id": "331199",
+      "name": "Tommaso D'Orazio",
+      "surname": "D'Orazio",
+      "position": "Left-Back",
+      "dateOfBirth": "May 3, 1990",
+      "age": "34",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,85m",
+      "foot": "left",
+      "signedFrom": "FC Südtirol",
+      "contract": "€250k",
+      "marketValue": "€250k",
+      "status": "Team captain"
+    },
+    {
+      "id": "673126",
+      "name": "Salvatore La Vardera",
+      "surname": "La Vardera",
+      "position": "Left-Back",
+      "dateOfBirth": "Mar 7, 2002",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,84m",
+      "foot": "left",
+      "joined": "Returned after loan spell with SS Monopoli 1966; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€75k",
+      "marketValue": "€75k",
+      "status": "unknown injury - Return unknown"
+    },
+    {
+      "id": "309746",
+      "name": "Pietro Martino",
+      "surname": "Martino",
+      "position": "Right-Back",
+      "dateOfBirth": "Aug 4, 1997",
+      "age": "26",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,78m",
+      "foot": "right",
+      "signedFrom": "Calcio Foggia 1920",
+      "contract": "€350k",
+      "marketValue": "€350k",
+      "status": "Achilles tendon rupture - Return unknown"
+    },
+    {
+      "id": "816006",
+      "name": "Baldovino Cimino",
+      "surname": "Cimino",
+      "position": "Right-Back",
+      "dateOfBirth": "Feb 20, 2004",
+      "age": "20",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,84m",
+      "foot": "right",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€300k",
+      "marketValue": "€300k"
+    },
+    {
+      "id": "339982",
+      "name": "Bright Gyamfi",
+      "surname": "Gyamfi",
+      "position": "Right-Back",
+      "dateOfBirth": "Jan 20, 1996",
+      "age": "28",
+      "nationality": [
+        "Ghana"
+      ],
+      "height": "1,78m",
+      "foot": "right",
+      "signedFrom": "Potenza Calcio",
+      "contract": "€300k",
+      "marketValue": "€300k"
+    },
+    {
+      "id": "1082519",
+      "name": "Charlys",
+      "surname": "Charlys",
+      "position": "Defensive Midfield",
+      "dateOfBirth": "Feb 19, 2004",
+      "age": "20",
+      "nationality": [
+        "Brazil"
+      ],
+      "height": "1,88m",
+      "foot": "right",
+      "joined": "On loan from Hellas Verona until Jun 30, 2025",
+      "signedFrom": "Hellas Verona",
+      "contract": "€100k",
+      "marketValue": "€100k"
+    },
+    {
+      "id": "619326",
+      "name": "Aldo Florenzi",
+      "surname": "Florenzi",
+      "position": "Central Midfield",
+      "dateOfBirth": "Apr 2, 2002",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,68m",
+      "foot": "right",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€1.00m",
+      "marketValue": "€1.00m"
+    },
+    {
+      "id": "411465",
+      "name": "Andrea Rizzo Pinna",
+      "surname": "Rizzo Pinna",
+      "position": "Central Midfield",
+      "dateOfBirth": "Jan 13, 2000",
+      "age": "24",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,72m",
+      "foot": "right",
+      "joined": "Joined from Lucchese 1905; date: Jul 7, 2024; fee: free transfer",
+      "signedFrom": "Lucchese 1905",
+      "contract": "€500k",
+      "marketValue": "€500k"
+    },
+    {
+      "id": "529885",
+      "name": "Christian Kouan",
+      "surname": "Kouan",
+      "position": "Central Midfield",
+      "dateOfBirth": "Dec 20, 1999",
+      "age": "24",
+      "nationality": [
+        "Cote d'Ivoire"
+      ],
+      "height": "1,78m",
+      "foot": "right",
+      "joined": "Joined from AC Perugia Calcio; date: Jul 1, 2024; fee: free transfer",
+      "signedFrom": "AC Perugia Calcio",
+      "contract": "€500k",
+      "marketValue": "€500k"
+    },
+    {
+      "id": "865461",
+      "name": "Orazio Chisari",
+      "surname": "Chisari",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "Oct 20, 2005",
+      "age": "18",
+      "nationality": [
+        "Italy"
+      ],
+      "foot": "right",
+      "joined": "Internal transfer: Cosenza Primavera; date: Jul 1, 2024",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€100k",
+      "marketValue": "€100k"
+    },
+    {
+      "id": "1065999",
+      "name": "Gianmarco Begheldo",
+      "surname": "Begheldo",
+      "position": "Attacking Midfield",
+      "dateOfBirth": "May 19, 2003",
+      "age": "21",
+      "nationality": [
+        "Italy"
+      ],
+      "joined": "Joined from Virtusvecomp Verona; date: Jul 13, 2024; fee: ?",
+      "signedFrom": "Virtusvecomp Verona",
+      "contract": "€75k",
+      "marketValue": "€75k"
+    },
+    {
+      "id": "628558",
+      "name": "Riccardo Ciervo",
+      "surname": "Ciervo",
+      "position": "Left Winger",
+      "dateOfBirth": "Apr 1, 2002",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,90m",
+      "foot": "right",
+      "joined": "On loan from US Sassuolo until Jun 30, 2025",
+      "signedFrom": "US Sassuolo",
+      "contract": "€1.30m",
+      "marketValue": "€1.30m"
+    },
+    {
+      "id": "198128",
+      "name": "Manuel Marras",
+      "surname": "Marras",
+      "position": "Right Winger",
+      "dateOfBirth": "Jul 9, 1993",
+      "age": "31",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,68m",
+      "foot": "left",
+      "signedFrom": "SSC Bari",
+      "contract": "€400k",
+      "marketValue": "€400k"
+    },
+    {
+      "id": "202979",
+      "name": "Gennaro Tutino",
+      "surname": "Tutino",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Aug 20, 1996",
+      "age": "27",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,77m",
+      "foot": "right",
+      "joined": "Joined from Parma Calcio 1913; date: Jul 1, 2024; fee: €2.50m",
+      "signedFrom": "Parma Calcio 1913",
+      "contract": "€3.50m",
+      "marketValue": "€3.50m"
+    },
+    {
+      "id": "337809",
+      "name": "Simone Mazzocchi",
+      "surname": "Mazzocchi",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Aug 17, 1998",
+      "age": "25",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,82m",
+      "foot": "right",
+      "joined": "On loan from Atalanta U23 until Jun 30, 2025",
+      "signedFrom": "Atalanta U23",
+      "contract": "€600k",
+      "marketValue": "€600k"
+    },
+    {
+      "id": "539582",
+      "name": "Massimo Zilli",
+      "surname": "Zilli",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Jul 17, 2002",
+      "age": "22",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,94m",
+      "foot": "left",
+      "joined": "Returned after loan spell with SPAL; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€400k",
+      "marketValue": "€400k"
+    },
+    {
+      "id": "691678",
+      "name": "Tommaso Fumagalli",
+      "surname": "Fumagalli",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Feb 20, 2000",
+      "age": "24",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,85m",
+      "foot": "right",
+      "joined": "On loan from Como 1907 until Jun 30, 2025",
+      "signedFrom": "Como 1907",
+      "contract": "€250k",
+      "marketValue": "€250k"
+    },
+    {
+      "id": "703767",
+      "name": "Alessandro Arioli",
+      "surname": "Arioli",
+      "position": "Centre-Forward",
+      "dateOfBirth": "May 24, 2003",
+      "age": "21",
+      "nationality": [
+        "Italy"
+      ],
+      "height": "1,86m",
+      "foot": "right",
+      "joined": "Returned after loan spell with SS Monopoli 1966; date: Jun 30, 2024; fee: End of loan",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€100k",
+      "marketValue": "€100k"
+    },
+    {
+      "id": "821125",
+      "name": "Jahce Novello",
+      "surname": "Novello",
+      "position": "Centre-Forward",
+      "dateOfBirth": "Apr 18, 2004",
+      "age": "20",
+      "nationality": [
+        "Australia",
+        "Italy"
+      ],
+      "height": "1,86m",
+      "foot": "left",
+      "signedFrom": "Cosenza Primavera",
+      "contract": "€50k",
+      "marketValue": "€50k"
+    },
+    {
+      "id": "1",
+      "name": "Luigi Marulla",
+      "surname": "Marulla",
+      "position": "Centre-Forward"
+    }
+  ],
+  "updatedAt": "2024-07-27T12:10:17.248562"
+}

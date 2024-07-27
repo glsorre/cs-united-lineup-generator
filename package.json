@@ -1,12 +1,16 @@
 {
   "name": "cs-squad-generator",
   "version": "0.1.0",
+  "homepage": "https://www.rightright.me/cs-united-lineup-generator",
   "private": true,
   "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "react": "^18.3.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
