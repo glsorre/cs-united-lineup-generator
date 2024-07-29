@@ -735,6 +735,37 @@
       "foot": "left",
       "signedFrom": "SS Lazio",
       "marketValue": "€250k"
+    },
+    {
+      "id": "240958",
+      "name": "José Mauri",
+      "surname": "Mauri",
+      "position": "Central Midfield",
+      "club": {
+        "name": "CA Sarmiento (Junin)",
+        "id": "12454"
+      },
+      "age": "28",
+      "nationalities": [
+        "Italy",
+        "Argentina"
+      ],
+      "marketValue": "€500k"
+    },
+    {
+      "id": "650224",
+      "name": "Christos Kourfalidis",
+      "surname": "Kourfalidis",
+      "position": "Central Midfield",
+      "club": {
+        "name": "Cagliari Calcio",
+        "id": "1390"
+      },
+      "age": "21",
+      "nationalities": [
+        "Greece"
+      ],
+      "marketValue": "€800k"
     }
   ],
   "updatedAt": "2024-07-27T12:10:17.248562"
