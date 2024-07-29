@@ -74,8 +74,6 @@ function App() {
     const { active } = event;
     const [type] = active.id.split('_');
 
-    console.log(type);
-
     if (type === 'player') {
       const element = document.getElementById(active.id);
       const rect = element.getBoundingClientRect();
@@ -103,11 +101,6 @@ function App() {
         element.style.top = '';
         element.style.left = '';
       }
-      if (
-        type === 'lineup' &&
-        event.activatorEvent?.target?.classList.contains('lineup_field_line_player_remove_action')) {
-        removePlayerFromLine(playerId, orginLine);
-      }
       return;
     }
 
@@ -124,11 +117,20 @@ function App() {
         break;
       case 'lineup':
         if (origIndex === destIndex && orginLine === destLine) {
+          if (event.activatorEvent?.target?.classList.contains('lineup_field_line_player_remove_action')) {
+            console.log('remove');
+            removePlayerFromLine(playerId, orginLine, origIndex);
+            return;
+          }
+        }
+        if (lines[destLine][destIndex]) {
+          swapPlayers(playerId, orginLine, origIndex, destLine, destIndex);
           return;
         }
-        if (lines[destLine][destIndex]) swapPlayers(playerId, orginLine, origIndex, destLine, destIndex);
-        else movePlayer(playerId, orginLine, origIndex, destLine, destIndex);
-        break;
+        else {
+          movePlayer(playerId, orginLine, origIndex, destLine, destIndex);
+          return;
+        }
       default:
         break;
     }
@@ -139,7 +141,7 @@ function App() {
   }
 
   function removePlayerFromLine(playerId, line, index) {
-    dispatch({ type: 'REMOVE_PLAYER_FROM_LINE', payload: { player: playerId, line, index } });
+    dispatch({ type: 'REMOVE_PLAYER_FROM_LINE', payload: { line, index } });
     const player = players.find(p => p.id === playerId);
     player.inLineup = false;
   }
