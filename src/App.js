@@ -105,11 +105,12 @@ function App() {
         player.inLineup = true;
         break;
       case 'lineup':
-        if (origIndex === destIndex && orginLine === destLine) {
+        if (origIndex === destIndex && orginLine === destLine && playerId) {
           if (event.activatorEvent?.target?.classList.contains('lineup_field_line_player_remove_action')) {
             removePlayerFromLine(playerId, orginLine, origIndex);
             return;
           }
+          return;
         }
         if (lines[destLine][destIndex]) {
           swapPlayers(playerId, orginLine, origIndex, destLine, destIndex);
@@ -252,18 +253,17 @@ function App() {
           <div className='lineup_field'>
             <h1>Line Up</h1>
             <h4>{`There are ${getPlayersNumber()} players and ${lines.length} lines.`}</h4>
+            <div className='lineup_field_lines_container'>
             {lines.map((line, lineIndex) => {
               const lineLength = line.length + 1;
               return <div className='lineup_field_line_container' key={`line_${lineIndex}`} id={`${lineIndex}`}>
                 <div className="lineup_field_line_drop_area">
                   {[...Array(lineLength).keys()].map((_, slotIndex) => {
                     if (slotIndex === lineLength - 1) {
-                      return <Slot key={`${lineIndex}_${slotIndex}`} id={`${lineIndex}_${slotIndex}`}>
-                        <LineupPlayer key={`lineup_${lineIndex}_${slotIndex}`} id={`lineup_${lineIndex}_${slotIndex}`}>
-                          <div className='lineup_field_line_player_container lineup_field_line_player_container_empty'>
-                            <h5 className="lineup_field_line_player_name">Drop Player...</h5>
-                          </div>
-                        </LineupPlayer>
+                      return <Slot key={`${lineIndex}_${slotIndex}`} id={`${lineIndex}_${slotIndex}`}>                 
+                        <div className='lineup_field_line_player_container lineup_field_line_player_container_empty'>
+                          <h5 className="lineup_field_line_player_name">Drop Player...</h5>
+                        </div>
                       </Slot>
                     } else {
                     const playerId = line[slotIndex];
@@ -287,6 +287,7 @@ function App() {
             <button className='lineup_field_add_line_action' onClick={(event) => {
               addLine();
             }}>➕</button>
+          </div>
           </div>
           <div className='lineup_output'>
             <h1>
