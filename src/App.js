@@ -1,4 +1,4 @@
-import { DndContext } from '@dnd-kit/core';
+import { DndContext, DragOverlay } from '@dnd-kit/core';
 import { useCallback, useEffect, useReducer, useState } from 'react';
 
 import './App.css';
@@ -47,6 +47,7 @@ function App() {
   const [players, setPlayers] = useState(null);
   const [search, setSearch] = useState('');
   const [lines, dispatch] = useReducer(reducer, initialState);
+  const [draggedPlayer, setDraggedPlayer] = useState(null);
 
   function printLines(lineup) {
     let str = '';
@@ -72,17 +73,26 @@ function App() {
 
   function handleDragStart(event) {
     const { active } = event;
-    const [type] = active.id.split('_');
+    const [type, playerId] = active.id.split('_');
+
+    console.log('drag start', type, playerId);
 
     if (type === 'player') {
-      const element = document.getElementById(active.id);
-      const rect = element.getBoundingClientRect();
-      element.classList.add('dragging');
-      element.style.width = `${rect.width}px`;
-      element.style.height = `${rect.height}px`;
-      element.style.top = `${rect.top}px`;
-      element.style.left = `${rect.left}px`;
+      const player = players.find(player => player.id === playerId);
+      setDraggedPlayer(player);
     }
+  //   const { active } = event;
+  //   const [type] = active.id.split('_');
+
+  //   if (type === 'player') {
+  //     const element = document.getElementById(active.id);
+  //     const rect = element.getBoundingClientRect();
+  //     element.classList.add('dragging');
+  //     element.style.width = `${rect.width}px`;
+  //     element.style.height = `${rect.height}px`;
+  //     element.style.top = `${rect.top}px`;
+  //     element.style.left = `${rect.left}px`;
+  //   }
   }
 
   function handleDragEnd(event) {
@@ -93,14 +103,15 @@ function App() {
     orginLine = parseInt(orginLine);
 
     if (!active || !over) {
-      if (type === 'player' && document.getElementById(active.id).classList.contains('dragging')) {
-        const element = document.getElementById(active.id)
-        element.classList.remove('dragging');
-        element.style.width = '';
-        element.style.height = '';
-        element.style.top = '';
-        element.style.left = '';
-      }
+      setDraggedPlayer(null);
+      // if (type === 'player' && document.getElementById(active.id).classList.contains('dragging')) {
+      //   const element = document.getElementById(active.id)
+      //   element.classList.remove('dragging');
+      //   element.style.width = '';
+      //   element.style.height = '';
+      //   element.style.top = '';
+      //   element.style.left = '';
+      // }
       return;
     }
 
@@ -314,6 +325,15 @@ function App() {
           </div>
         </section>
       </main>
+
+      <DragOverlay>
+        {draggedPlayer && <Player key={`player_${draggedPlayer.id}`} id={`player_${draggedPlayer.id}`}>
+          <li className='players_card'>
+            <h5 className='players_card_name'>{draggedPlayer.surname}</h5>
+            <p className='players_card_label'>{draggedPlayer.position}</p>
+          </li>
+        </Player>}
+      </DragOverlay>
     </DndContext >
   );
 }

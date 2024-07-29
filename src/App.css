@@ -10,17 +10,15 @@ button {
   margin: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-[draggable="true"] {
-  position: relative;
-  width: 100%;
-  z-index: 9999;
 }
 
 .dragging {
@@ -39,8 +37,6 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-width: 15%;
-  max-width: 15%;
   width: 15%;
 }
 
@@ -62,6 +58,7 @@ button {
   border: 1px solid #ccc;
   height: 100%;
   width: 100%;
+  max-width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
