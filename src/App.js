@@ -75,24 +75,10 @@ function App() {
     const { active } = event;
     const [type, playerId] = active.id.split('_');
 
-    console.log('drag start', type, playerId);
-
     if (type === 'player') {
       const player = players.find(player => player.id === playerId);
       setDraggedPlayer(player);
     }
-  //   const { active } = event;
-  //   const [type] = active.id.split('_');
-
-  //   if (type === 'player') {
-  //     const element = document.getElementById(active.id);
-  //     const rect = element.getBoundingClientRect();
-  //     element.classList.add('dragging');
-  //     element.style.width = `${rect.width}px`;
-  //     element.style.height = `${rect.height}px`;
-  //     element.style.top = `${rect.top}px`;
-  //     element.style.left = `${rect.left}px`;
-  //   }
   }
 
   function handleDragEnd(event) {
@@ -104,14 +90,6 @@ function App() {
 
     if (!active || !over) {
       setDraggedPlayer(null);
-      // if (type === 'player' && document.getElementById(active.id).classList.contains('dragging')) {
-      //   const element = document.getElementById(active.id)
-      //   element.classList.remove('dragging');
-      //   element.style.width = '';
-      //   element.style.height = '';
-      //   element.style.top = '';
-      //   element.style.left = '';
-      // }
       return;
     }
 
@@ -129,7 +107,6 @@ function App() {
       case 'lineup':
         if (origIndex === destIndex && orginLine === destLine) {
           if (event.activatorEvent?.target?.classList.contains('lineup_field_line_player_remove_action')) {
-            console.log('remove');
             removePlayerFromLine(playerId, orginLine, origIndex);
             return;
           }
@@ -198,27 +175,27 @@ function App() {
   useEffect(() => {
     function formatLines(str) {
       const lines = str.split('\n');
-      const maxLineElements = Math.max(...lines.map(line => line.split('\t').length));
-      const maxLineLength = Math.max(...lines.map(line => line.length)) + (maxLineElements * 3);
+      const maxLineElements = Math.max(...lines.map(line => line.split('\t').filter(element => element.length > 0).length));
+      const maxLineLength = Math.max(...lines.map(line => line.length));
+      const paddedLineLength = maxLineLength + + (maxLineElements - 2) * 3;
       const results = [];
+      
 
       results.push('[pre]');
       for (let line of lines) {
-        if (line.length === 0) continue;
         if (line.length < maxLineLength) {
-          const lineElements = line.split('\t');
-          const numberOfElements = line.split('\t').length;
-          const numberOfPadding = numberOfElements;
-          const diff = (maxLineLength + (numberOfPadding * 3)) - line.length;
-          const paddingLength = numberOfElements > 1 ? Math.floor(diff / numberOfPadding) : Math.round(diff / 2);
+          const lineElements = line.split('\t').filter(element => element.length > 0);
+          const numberOfElements = line.split('\t').filter(element => element.length > 0).length;
+          const diff = paddedLineLength - line.length;
+          const paddingLength = numberOfElements > 1 ? Math.round(diff / (numberOfElements + 1)) : Math.round(diff / 2);
           const padding = generatePaddingWithCentraChar(paddingLength, '|');
           const result = numberOfElements > 1 ? lineElements.reduce(
             (acc, element, index, array) => {
               if (index === 0) return acc + ' '.repeat(paddingLength) + element;
-              if (index === array.length - 1) return acc + element;
+              //if (index === array.length - 1) return acc + element;
               return acc + padding + element;
             }, ''
-          ) : line + ' '.repeat(diff);
+          ) : ' '.repeat(paddingLength) + line;
           results.push(result);
         } else {
           const lineElements = line.split('\t');
@@ -229,7 +206,7 @@ function App() {
             }, ''));
         }
       }
-      results.push('[/pre]');
+      results[results.length - 1] = '[/pre]'
 
       const result_str = results.join('\n');
       return result_str;
