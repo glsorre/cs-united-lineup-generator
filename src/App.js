@@ -102,6 +102,7 @@ function App() {
       case 'player':
         addPlayerToLine(player.id, destLine, destIndex);
         player.inLineup = true;
+        if (search) setSearch('');
         break;
       case 'lineup':
         if (origIndex === destIndex && orginLine === destLine && playerId) {
@@ -228,7 +229,7 @@ function App() {
       <main className="App">
         <section className='players'>
           <h1 className='players_title'>Squad</h1>
-          <input type='search' className='players_search' placeholder='Filter' onInput={(e) => setSearch(e.target.value)} />
+          <input value={search} type='search' className='players_search' placeholder='Filter' onInput={(e) => setSearch(e.target.value)} />
           <ul className='players_list'>
             {
               players && players
