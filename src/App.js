@@ -66,9 +66,8 @@ function App() {
   const cachedPrintLines = useCallback(printLines, [players, printLines]);
 
   function generatePaddingWithCentraChar(length, char) {
-    const padding = ' '.repeat(length);
     const paddingLength = Math.floor(length / 2);
-    return padding.substring(0, paddingLength) + char + padding.substring(paddingLength);
+    return ' '.repeat(paddingLength) + char + ' '.repeat(paddingLength);
   }
 
   function handleDragStart(event) {
@@ -178,7 +177,7 @@ function App() {
       const lines = str.split('\n');
       const maxLineElements = Math.max(...lines.map(line => line.split('\t').filter(element => element.length > 0).length));
       const maxLineLength = Math.max(...lines.map(line => line.length));
-      const paddedLineLength = maxLineLength + + (maxLineElements - 2) * 3;
+      const paddedLineLength = maxLineLength + (Math.max(0, maxLineElements - 2)) * 3;
       const results = [];
       
 
@@ -187,8 +186,9 @@ function App() {
         if (line.length < maxLineLength) {
           const lineElements = line.split('\t').filter(element => element.length > 0);
           const numberOfElements = line.split('\t').filter(element => element.length > 0).length;
-          const diff = paddedLineLength - line.length;
+          const diff = paddedLineLength - (line.length - 1);
           const paddingLength = numberOfElements > 1 ? Math.round(diff / (numberOfElements + 1)) : Math.round(diff / 2);
+          console.log(paddingLength, line);
           const padding = generatePaddingWithCentraChar(paddingLength, '|');
           const result = numberOfElements > 1 ? lineElements.reduce(
             (acc, element, index, array) => {
