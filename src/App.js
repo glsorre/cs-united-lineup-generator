@@ -50,17 +50,17 @@ function App() {
   const [draggedPlayer, setDraggedPlayer] = useState(null);
 
   function printLines(lineup) {
-    let str = '';
+    let results = [];
 
-    for (let element of lineup) {
-      if (Array.isArray(element)) str += printLines(element) + "\n";
+    for (let [index, element] of lineup.entries()) {
+      if (Array.isArray(element)) results.push(printLines(element));
       else {
         const player = players.find(p => p.id === element);
-        str += player.surname + "\t";
+        results[index] = [...results[index] || [], player.surname];
       }
     }
 
-    return str;
+    return results;
   }
 
   const cachedPrintLines = useCallback(printLines, [players, printLines]);
@@ -173,41 +173,37 @@ function App() {
   }, []);
 
   useEffect(() => {
-    function formatLines(str) {
-      const lines = str.split('\n');
-      const maxLineElements = Math.max(...lines.map(line => line.split('\t').filter(element => element.length > 0).length));
-      const maxLineLength = Math.max(...lines.map(line => line.length));
-      const paddedLineLength = maxLineLength + (Math.max(0, maxLineElements - 2)) * 3;
+    function formatLines(lines) {
+      const maxLineElements = Math.max(...lines.map(line => line.length));
+      const maxLineLength = Math.max(...lines.map(line => line.join('').length));
+      const paddedLineLength = maxLineLength + (Math.max(0, maxLineElements - 1)) * 3;
       const results = [];
       
 
       results.push('[pre]');
       for (let line of lines) {
-        if (line.length < maxLineLength) {
-          const lineElements = line.split('\t').filter(element => element.length > 0);
-          const numberOfElements = line.split('\t').filter(element => element.length > 0).length;
-          const diff = paddedLineLength - (line.length - 1);
-          const paddingLength = numberOfElements > 1 ? Math.round(diff / (numberOfElements + 1)) : Math.round(diff / 2);
-          console.log(paddingLength, line);
+        const lineLength = line.join('').length;
+        const numberOfElements = line.length;
+        if (line.join('').length < maxLineLength) {          
+          const diff = paddedLineLength - lineLength;
+          const paddingLength = Math.round(diff / (numberOfElements + 1))
           const padding = generatePaddingWithCentraChar(paddingLength, '|');
-          const result = numberOfElements > 1 ? lineElements.reduce(
-            (acc, element, index, array) => {
+          const result = numberOfElements > 1 ? line.reduce(
+            (acc, element, index) => {
               if (index === 0) return acc + ' '.repeat(paddingLength) + element;
-              //if (index === array.length - 1) return acc + element;
               return acc + padding + element;
             }, ''
-          ) : ' '.repeat(paddingLength) + line;
+          ) : ' '.repeat(paddingLength) + line.join('');
           results.push(result);
         } else {
-          const lineElements = line.split('\t');
-          results.push(lineElements.reduce(
-            (acc, element, index, array) => {
-              if (index === 0 || index === array.length - 1) return acc + element;
+          results.push(line.reduce(
+            (acc, element, index) => {
+              if (index === 0) return acc + element;
               return acc + ' | ' + element;
             }, ''));
         }
       }
-      results[results.length - 1] = '[/pre]'
+      results.push('[/pre]');
 
       const result_str = results.join('\n');
       return result_str;
