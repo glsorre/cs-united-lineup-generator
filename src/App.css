@@ -97,7 +97,6 @@ li {
 .lineup_field {
   flex: 1;
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
@@ -153,18 +152,30 @@ li {
 }
 
 .lineup_field_line_player_remove_action {
-  height: 100%;
+  padding: .5rem;
+  width: 40px;
 }
 
 .lineup_field_add_line_action {
-  padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   width: 100%;
 }
 
 .lineup_field_remove_line_action {
   height: 100%;
   padding: 25px 15px;
+}
+
+.lineup_field_move_up_line_action {
+  height: 100%;
+  padding: 25px 15px;
+  margin-right: .5rem;
+}
+
+.lineup_field_move_down_line_action {
+  height: 100%;
+  padding: 25px 15px;
+  margin-right: .5rem;
 }
 
 .lineup_output {

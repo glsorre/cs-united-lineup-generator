@@ -22,6 +22,13 @@ const reducer = (state, action) => {
       return [...state, []];
     case 'REMOVE_LINE':
       return state.filter((_, index) => index !== action.payload);
+    case 'SWAP_LINES':
+      const { line1, line2 } = action.payload;
+      const newState = [...state];
+      const temp = newState[line1];
+      newState[line1] = newState[line2];
+      newState[line2] = temp;
+      return newState;
     case 'ADD_PLAYER_TO_LINE':
       const { playerId, line, index } = action.payload;
       return state.map((currentLine, currentIndex) => {
@@ -154,6 +161,14 @@ function App() {
 
   function removeLine(index) {
     dispatch({ type: 'REMOVE_LINE', payload: index });
+    lines[index].forEach(playerId => {
+      const player = players.find(p => p.id === playerId);
+      player.inLineup = false;
+    });
+  }
+
+  function swapLines(line1, line2) {
+    dispatch({ type: 'SWAP_LINES', payload: { line1, line2 } });
   }
 
   function getPlayersNumber() {
@@ -187,7 +202,7 @@ function App() {
         const numberOfElements = line.length;
         if (line.join('').length < maxLineLength) {          
           const diff = paddedLineLength - lineLength;
-          const paddingLength = Math.round(diff / (numberOfElements + 1))
+          const paddingLength = Math.floor(diff / (numberOfElements + 1))
           const padding = generatePaddingWithCentraChar(paddingLength, '|');
           const result = numberOfElements > 1 ? line.reduce(
             (acc, element, index) => {
@@ -276,8 +291,14 @@ function App() {
                     }
                   })}
                 </div>
+                <button disabled={lineIndex === 0} className='lineup_field_move_up_line_action' onClick={(event) => {
+                  swapLines(lineIndex, lineIndex - 1);
+                }}>🔼</button>
+                <button disabled={lineIndex === lines.length - 1} className='lineup_field_move_down_line_action' onClick={(event) => {
+                  swapLines(lineIndex, lineIndex + 1);
+                }}>🔽</button>
                 <button className='lineup_field_remove_line_action' onClick={(event) => {
-                    removeLine(lineIndex);
+                  removeLine(lineIndex);
                 }}>🗑️</button>
               </div>
             })}
