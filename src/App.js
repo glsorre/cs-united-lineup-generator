@@ -192,24 +192,28 @@ function App() {
     function formatLines(lines) {
       const maxLineElements = Math.max(...lines.map(line => line.length));
       const maxLineLength = Math.max(...lines.map(line => line.join('').length));
-      const paddedLineLength = maxLineLength + (Math.max(0, maxLineElements - 1)) * 3;
-      const results = [];
-      
+      let paddedMaxLineLength = maxLineLength + (Math.max(0, maxLineElements - 1)) * 3;
+      const isPaddedMaxLineLengthEven = paddedMaxLineLength % 2 === 0;
+      if (isPaddedMaxLineLengthEven) paddedMaxLineLength += 1;
+      const results = [];      
 
       results.push('[pre]');
       for (let line of lines) {
         const lineLength = line.join('').length;
         const numberOfElements = line.length;
         if (line.join('').length < maxLineLength) {          
-          const diff = paddedLineLength - lineLength;
-          const paddingLength = Math.floor(diff / (numberOfElements + 1))
+          const diff = paddedMaxLineLength - lineLength;
+          const paddingLength = Math.abs(-Math.round(-(diff / (numberOfElements + 1))));
           const padding = generatePaddingWithCentraChar(paddingLength, '|');
+          const paddedLineLength = lineLength + padding.length * (numberOfElements - 1);
+          let leftMargin = Math.abs(-Math.round(-((paddedMaxLineLength - paddedLineLength) / 2)));
+          if (!isPaddedMaxLineLengthEven && paddedLineLength % 2 === 0) leftMargin += 1;
           const result = numberOfElements > 1 ? line.reduce(
             (acc, element, index) => {
-              if (index === 0) return acc + ' '.repeat(paddingLength) + element;
+              if (index === 0) return acc + ' '.repeat(leftMargin) + element;
               return acc + padding + element;
             }, ''
-          ) : ' '.repeat(paddingLength) + line.join('');
+          ) : ' '.repeat(leftMargin) + line.join('');
           results.push(result);
         } else {
           results.push(line.reduce(
